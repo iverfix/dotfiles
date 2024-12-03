@@ -25,8 +25,6 @@ zinit cdreplay -q
 
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.toml)"
 
-eval "$(oh-my-posh init zsh)"
-
 bindkey '^f' autosuggest-accept
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -52,6 +50,28 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 alias ls='ls --color'
 unalias zi
+
+# Git aliases
+alias g='git'
+alias gs='git status'
+alias gd='git diff'
+alias gds='git diff --stage'
+alias gp='git push'
+alias gpl='git pull'
+alias gl='git log'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gca='git commit --amend --no-edit'
+alias gcam='git commit --amend'
+alias ga='git add'
+alias gaa='git add --all'
+alias gst='git stash'
+alias gstp='git stash pop'
+alias gch='git checkout'
+alias gaap='git add --all && git commit --amned --no-edit && git push -f'
+alias gf='git fetch'
+
+
 
 eval "$(fzf --zsh)"
 

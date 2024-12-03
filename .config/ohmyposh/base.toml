@@ -4,7 +4,7 @@ final_space = true
 
 [secondary_prompt]
   template = '❯❯ '
-  foreground = 'magenta'
+  foreground = 'lightBlue'
   background = 'transparent'
 
 [transient_prompt]
@@ -18,7 +18,7 @@ final_space = true
 
   [[blocks.segments]]
     template = '{{ .Path }}'
-    foreground = 'green'
+    foreground = 'lightBlue'
     background = 'transparent'
     type = 'path'
     style = 'plain'
@@ -69,3 +69,7 @@ final_space = true
 
     [blocks.segments.properties]
       cache_duration = 'none'
+
+
+[palette]
+light-blue = "#CAF0F8"
