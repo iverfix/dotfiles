@@ -1,4 +1,4 @@
-
+require("setup")
 
 local tabWidth = 4
 
