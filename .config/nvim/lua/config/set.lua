@@ -1,27 +1,27 @@
+local set = vim.opt
+set.nu = true
+set.relativenumber = true
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
+set.tabstop = 4
+set.softtabstop = 4
+set.shiftwidth = 4
+set.expandtab = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-
-vim.opt.smartindent = true
-
-
-vim.opt.swapfile = false
-vim.opt.backup = false
+set.smartindent = true
 
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+set.swapfile = false
+set.backup = false
 
 
-vim.opt.termguicolors = true
+set.hlsearch = false
+set.incsearch = true
 
-vim.opt.scrolloff = 8
 
-vim.opt.updatetime = 50
+set.termguicolors = true
+
+set.scrolloff = 8
+
+set.updatetime = 50
 
 vim.g.mapleader = " "
