@@ -26,7 +26,16 @@ return {
     },
   },},
     config = function()
-      require("lspconfig").lua_ls.setup {}
+
+       vim.diagnostic.config({
+        virtual_text = true, -- ← this is the key line
+        signs = true,
+        underline = true,
+        update_in_insert = false,
+        severity_sort = true,
+      })
+
+      vim.lsp.enable({'lua_ls', 'clangd'})
     end,
   }
 }
