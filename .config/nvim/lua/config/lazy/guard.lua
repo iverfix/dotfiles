@@ -7,6 +7,7 @@ return {
   config = function()
     local ft = require("guard.filetype")
 
+    ft("lua"):fmt("stylua")
     ft("c"):fmt("clang-format")
     ft("cpp"):fmt("clang-format")
     ft("json"):fmt("clang-format")
@@ -18,4 +19,3 @@ return {
     }
   end,
 }
-
