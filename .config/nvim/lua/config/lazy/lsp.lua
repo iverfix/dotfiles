@@ -85,7 +85,15 @@ return {
       })
 
       vim.lsp.config("clangd", {
-        cmd = { "clangd" },
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--clang-tidy",
+          "--header-insertion=iwyu",
+          "--completion-style=detailed",
+          "--function-arg-placeholders",
+          "--fallback-style=llvm",
+        },
         filetypes = { "c", "cpp", "cuda" },
         root_markers = {
           ".clangd",
@@ -130,7 +138,7 @@ return {
         end,
       })
 
-      vim.lsp.enable({ "lua_ls", "clangd" })
+      vim.lsp.enable({ "lua_ls", "clangd", "cmake" })
     end,
   },
 }
