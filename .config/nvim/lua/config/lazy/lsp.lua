@@ -129,7 +129,7 @@ return {
 
           -- add hotkey
           local opts = { noremap = true, silent = true, buffer = bufnr }
-          vim.keymap.set("n", "<leader>ch", "<cmd>LspClangdSwitchSourceHeader<cr>", opts)
+          vim.keymap.set("n", "<leader>hh", "<cmd>LspClangdSwitchSourceHeader<cr>", opts)
           vim.keymap.set("n", "<leader>ci", "<cmd>LspClangdShowSymbolInfo<CR>", opts)
 
           vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts) -- go to definition
