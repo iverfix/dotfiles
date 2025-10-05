@@ -76,9 +76,13 @@ alias gaap='git add --all && git commit --amned --no-edit && git push -f'
 alias gf='git fetch'
 
 
-
 eval "$(fzf --zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(zoxide init --cmd cd zsh)"
+
+
+if [[ ":$LD_LIBRARY_PATH:" != *":/opt/gcc-15/lib64:"* ]]; then
+    export LD_LIBRARY_PATH=/opt/gcc-15/lib64:$LD_LIBRARY_PATH
+fi
