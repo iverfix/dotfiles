@@ -26,7 +26,7 @@ zinit snippet OMZP::command-not-found
 autoload -U compinit && compinit
 
 zinit cdreplay -q
-
+OMP_DISABLE_TITLE=true
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.toml)"
 
 bindkey '^f' autosuggest-accept
