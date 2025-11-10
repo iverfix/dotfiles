@@ -131,10 +131,14 @@ return {
           local opts = { noremap = true, silent = true, buffer = bufnr }
           vim.keymap.set("n", "<leader>hh", "<cmd>LspClangdSwitchSourceHeader<cr>", opts)
           vim.keymap.set("n", "<leader>ci", "<cmd>LspClangdShowSymbolInfo<CR>", opts)
+          vim.keymap.set("n", "<leader>ci", "<cmd>LspClangdShowSymbolInfo<CR>", opts)
 
           vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts) -- go to definition
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
           vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts) -- go to implementation
+          vim.keymap.set("n", "<leader>ca", function()
+            vim.lsp.buf.code_action()
+          end, { noremap = true, silent = true, buffer = bufnr })
         end,
       })
 

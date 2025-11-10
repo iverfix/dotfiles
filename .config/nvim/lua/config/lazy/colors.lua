@@ -1,89 +1,86 @@
-function ColorMyPencils(color)
-  color = color or "rose-pine-moon"
-  vim.cmd.colorscheme(color)
-
-  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-end
-
 return {
-
   {
-    "erikbackman/brightburn.vim",
-  },
-
-  {
-    "folke/tokyonight.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
     lazy = false,
-    opts = {},
+    priority = 1000,
     config = function()
-      ColorMyPencils()
-    end,
-  },
-  {
-    "ellisonleao/gruvbox.nvim",
-    name = "gruvbox",
-    config = function()
-      require("gruvbox").setup({
-        terminal_colors = true, -- add neovim terminal colors
-        undercurl = true,
-        underline = false,
-        bold = true,
-        italic = {
-          strings = false,
-          emphasis = false,
-          comments = false,
-          operators = false,
-          folds = false,
-        },
-        strikethrough = true,
-        invert_selection = false,
-        invert_signs = false,
-        invert_tabline = false,
-        invert_intend_guides = false,
-        inverse = true, -- invert background for search, diffs, statuslines and errors
-        contrast = "", -- can be "hard", "soft" or empty string
-        palette_overrides = {},
-        overrides = {},
-        dim_inactive = false,
-        transparent_mode = false,
-      })
-    end,
-  },
-  {
-    "folke/tokyonight.nvim",
-    config = function()
-      require("tokyonight").setup({
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-        transparent = true, -- Enable this to disable setting the background color
-        terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
+      require("catppuccin").setup({
+        flavour = "mocha", -- dark base
+        transparent_background = true,
+        term_colors = true,
         styles = {
-          -- Style to be applied to different syntax groups
-          -- Value is any valid attr-list value for `:help nvim_set_hl`
-          comments = { italic = false },
-          keywords = { italic = false },
-          -- Background styles. Can be "dark", "transparent" or "normal"
-          sidebars = "dark", -- style for sidebars, see below
-          floats = "dark", -- style for floating windows
+          comments = { "italic" },
+          functions = { "bold" },
+          keywords = { "italic" },
+        },
+        integrations = {
+          cmp = true,
+          gitsigns = true,
+          treesitter = true,
+          telescope = { enabled = true },
+          native_lsp = { enabled = true },
+          which_key = true,
+        },
+        color_overrides = {
+          mocha = {
+            base = "#0e0e12", -- deep background
+            mantle = "#111118",
+            crust = "#0b0b0e",
+            text = "#d2d8ff", -- slightly bluish white
+            red = "#ff6b6b", -- strong crimson red
+            maroon = "#ff5c5c", -- darker red for contrasts
+            peach = "#ff7b72", -- warm reddish orange
+            yellow = "#ff7676", -- shifted from yellow → light red
+            green = "#ff8585", -- shifted green → pastel red
+            teal = "#89b4fa", -- blue-ish highlight
+            blue = "#82aaff", -- vivid blue for keywords
+            mauve = "#b48ef7", -- purple tone for structure
+            lavender = "#a5adff", -- soft blue-purple
+            sky = "#91d7e3",
+            sapphire = "#74c7ec",
+          },
+        },
+        highlight_overrides = {
+          mocha = function(c)
+            return {
+              Normal = { fg = c.text, bg = "none" },
+              NormalFloat = { bg = "none" },
+              FloatBorder = { fg = c.lavender },
+              Comment = { fg = c.surface2, italic = true },
+              Function = { fg = c.blue, bold = true },
+              Keyword = { fg = c.mauve, italic = true },
+              Conditional = { fg = c.blue, italic = true },
+              Constant = { fg = c.red },
+              String = { fg = c.peach },
+              Number = { fg = c.red },
+              Boolean = { fg = c.red },
+              Operator = { fg = c.lavender },
+              Type = { fg = c.blue },
+              Identifier = { fg = c.text },
+              Variable = { fg = c.text },
+              CursorLineNr = { fg = c.lavender, bold = true },
+              LineNr = { fg = c.surface2 },
+              Visual = { bg = c.surface1 },
+              Pmenu = { bg = "none" },
+              PmenuSel = { bg = c.surface1, fg = c.red, bold = true },
+              TelescopeBorder = { fg = c.lavender, bg = "none" },
+              TelescopeTitle = { fg = c.blue, bold = true },
+              TelescopeSelection = { fg = c.red, bg = c.surface1 },
+              DiagnosticError = { fg = c.red },
+              DiagnosticWarn = { fg = c.peach },
+              DiagnosticInfo = { fg = c.blue },
+              DiagnosticHint = { fg = c.mauve },
+              DiffAdd = { fg = c.red },
+              DiffChange = { fg = c.peach },
+              DiffDelete = { fg = c.red },
+              DiffText = { fg = c.red, bold = true },
+            }
+          end,
         },
       })
-    end,
-  },
 
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    config = function()
-      require("rose-pine").setup({
-        disable_background = true,
-        styles = {
-          italic = false,
-        },
-      })
-
-      ColorMyPencils()
+      vim.cmd.colorscheme("catppuccin")
     end,
   },
 }
