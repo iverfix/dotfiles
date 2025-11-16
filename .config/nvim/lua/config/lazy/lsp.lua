@@ -142,7 +142,42 @@ return {
         end,
       })
 
-      vim.lsp.enable({ "lua_ls", "clangd", "cmake" })
+      vim.lsp.config("rust_analyzer", {
+        filetypes = { "rust" },
+        root_markers = {
+          "Cargo.toml",
+          "rust-project.json",
+          ".git",
+        },
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              allFeatures = true,
+            },
+            checkOnSave = {
+              command = "clippy",
+            },
+          },
+        },
+        on_attach = function(client, bufnr)
+          -- keymaps for Rust
+          local opts = { noremap = true, silent = true, buffer = bufnr }
+
+          vim.keymap.set("n", "<leader>ca", function()
+            vim.lsp.buf.code_action({
+              filter = function(action)
+                return action.kind == "quickfix" or action.kind == "refactor"
+              end,
+            })
+          end, opts)
+
+          vim.keymap.set("n", "<leader>rf", vim.lsp.buf.format, opts)
+          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+        end,
+      })
+
+      vim.lsp.enable({ "lua_ls", "clangd", "cmake", "rust_analyzer" })
     end,
   },
 }

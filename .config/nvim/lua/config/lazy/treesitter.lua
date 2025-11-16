@@ -5,7 +5,7 @@ return {
     require("nvim-treesitter.configs").setup({
       -- A list of parser names, or "all"
       ensure_installed = {
-        "vimdoc",
+        "help",
         "javascript",
         "typescript",
         "c",
@@ -16,6 +16,8 @@ return {
         "cpp",
       },
 
+      modules = {},
+      ignore_install = {},
       sync_install = false,
       auto_install = true,
 
@@ -25,8 +27,7 @@ return {
 
       highlight = {
         enable = true,
-
-        additional_vim_regex_highlighting = { "markdown" },
+        additional_vim_regex_highlighting = false,
       },
     })
   end,
