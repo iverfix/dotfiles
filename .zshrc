@@ -4,6 +4,7 @@ path+=('/home/iver/.local/bin')
 path+=('/home/iverfix/.local/bin')
 path+=('/snap/bin')
 path+=('/opt/gcc-15/bin')
+path+=('/Users/iver/.cargo/bin');
 ld_library_path+=('/opt/gcc-15/lib64')
 
 if [ ! -d "$ZINIT_HOME" ]; then

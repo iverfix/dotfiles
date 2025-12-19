@@ -1,34 +1,29 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  config = function()
-    require("nvim-treesitter.configs").setup({
-      -- A list of parser names, or "all"
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate", -- keeps parsers up to date
+    opts = {
       ensure_installed = {
-        "help",
+        "bash",
+        "c",
+        "cpp",
         "javascript",
         "typescript",
-        "c",
         "lua",
         "rust",
-        "jsdoc",
-        "bash",
-        "cpp",
+        "vim",
+        "vimdoc",
       },
-
-      modules = {},
-      ignore_install = {},
-      sync_install = false,
-      auto_install = true,
-
-      indent = {
-        enable = true,
-      },
-
+      sync_install = false, -- install asynchronously
+      auto_install = true, -- install missing parsers on buffer open
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
       },
-    })
-  end,
+      indent = {
+        enable = true,
+      },
+      -- you can add other modules here (e.g., incremental_selection, textobjects)
+    },
+  },
 }
