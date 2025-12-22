@@ -1,18 +1,18 @@
 return {
   {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate", -- keeps parsers up to date
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate', -- keeps parsers up to date
     opts = {
       ensure_installed = {
-        "bash",
-        "c",
-        "cpp",
-        "javascript",
-        "typescript",
-        "lua",
-        "rust",
-        "vim",
-        "vimdoc",
+        'bash',
+        'c',
+        'cpp',
+        'javascript',
+        'typescript',
+        'lua',
+        'rust',
+        'vim',
+        'vimdoc',
       },
       sync_install = false, -- install asynchronously
       auto_install = true, -- install missing parsers on buffer open

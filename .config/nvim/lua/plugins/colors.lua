@@ -1,18 +1,18 @@
 return {
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    'catppuccin/nvim',
+    name = 'catppuccin',
     lazy = false,
     priority = 1000,
     config = function()
-      require("catppuccin").setup({
-        flavour = "mocha", -- dark base
+      require('catppuccin').setup({
+        flavour = 'mocha', -- dark base
         transparent_background = true,
         term_colors = true,
         styles = {
-          comments = { "italic" },
-          functions = { "bold" },
-          keywords = { "italic" },
+          comments = { 'italic' },
+          functions = { 'bold' },
+          keywords = { 'italic' },
         },
         integrations = {
           cmp = true,
@@ -24,28 +24,28 @@ return {
         },
         color_overrides = {
           mocha = {
-            base = "#0e0e12", -- deep background
-            mantle = "#111118",
-            crust = "#0b0b0e",
-            text = "#d2d8ff", -- slightly bluish white
-            red = "#ff6b6b", -- strong crimson red
-            maroon = "#ff5c5c", -- darker red for contrasts
-            peach = "#ff7b72", -- warm reddish orange
-            yellow = "#ff7676", -- shifted from yellow → light red
-            green = "#ff8585", -- shifted green → pastel red
-            teal = "#89b4fa", -- blue-ish highlight
-            blue = "#82aaff", -- vivid blue for keywords
-            mauve = "#b48ef7", -- purple tone for structure
-            lavender = "#a5adff", -- soft blue-purple
-            sky = "#91d7e3",
-            sapphire = "#74c7ec",
+            base = '#0e0e12', -- deep background
+            mantle = '#111118',
+            crust = '#0b0b0e',
+            text = '#d2d8ff', -- slightly bluish white
+            red = '#ff6b6b', -- strong crimson red
+            maroon = '#ff5c5c', -- darker red for contrasts
+            peach = '#ff7b72', -- warm reddish orange
+            yellow = '#ff7676', -- shifted from yellow → light red
+            green = '#ff8585', -- shifted green → pastel red
+            teal = '#89b4fa', -- blue-ish highlight
+            blue = '#82aaff', -- vivid blue for keywords
+            mauve = '#b48ef7', -- purple tone for structure
+            lavender = '#a5adff', -- soft blue-purple
+            sky = '#91d7e3',
+            sapphire = '#74c7ec',
           },
         },
         highlight_overrides = {
           mocha = function(c)
             return {
-              Normal = { fg = c.text, bg = "none" },
-              NormalFloat = { bg = "none" },
+              Normal = { fg = c.text, bg = 'none' },
+              NormalFloat = { bg = 'none' },
               FloatBorder = { fg = c.lavender },
               Comment = { fg = c.surface2, italic = true },
               Function = { fg = c.blue, bold = true },
@@ -62,9 +62,9 @@ return {
               CursorLineNr = { fg = c.lavender, bold = true },
               LineNr = { fg = c.surface2 },
               Visual = { bg = c.surface1 },
-              Pmenu = { bg = "none" },
+              Pmenu = { bg = 'none' },
               PmenuSel = { bg = c.surface1, fg = c.red, bold = true },
-              TelescopeBorder = { fg = c.lavender, bg = "none" },
+              TelescopeBorder = { fg = c.lavender, bg = 'none' },
               TelescopeTitle = { fg = c.blue, bold = true },
               TelescopeSelection = { fg = c.red, bg = c.surface1 },
               DiagnosticError = { fg = c.red },
@@ -80,7 +80,7 @@ return {
         },
       })
 
-      vim.cmd.colorscheme("catppuccin")
+      vim.cmd.colorscheme('catppuccin')
     end,
   },
 }

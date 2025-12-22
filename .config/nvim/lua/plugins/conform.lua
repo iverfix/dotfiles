@@ -1,16 +1,16 @@
 return {
-  "stevearc/conform.nvim",
+  'stevearc/conform.nvim',
   config = function()
-    require("conform").setup({
+    require('conform').setup({
       formatters_by_ft = {
-        cpp = { "clang_format_18" },
-        lua = { "stylua" },
-        rust = { "rustfmt" },
+        cpp = { 'clang_format_18' },
+        lua = { 'stylua' },
+        rust = { 'rustfmt' },
         -- add more filetypes if needed
       },
       formatters = {
         clang_format_18 = {
-          command = "clang-format-18",
+          command = 'clang-format-18',
         },
       },
       format_on_save = {
