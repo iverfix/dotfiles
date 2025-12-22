@@ -5,6 +5,7 @@ return {
       formatters_by_ft = {
         cpp = { "clang_format_18" },
         lua = { "stylua" },
+        rust = { "rustfmt" },
         -- add more filetypes if needed
       },
       formatters = {
