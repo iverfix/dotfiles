@@ -1,4 +1,6 @@
-require("config")
+require("remap")
+require("set")
+require("lazy_init")
 
 vim.opt.clipboard:append("unnamedplus")
 

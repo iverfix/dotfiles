@@ -22,3 +22,5 @@ set.scrolloff = 8
 set.updatetime = 50
 
 vim.g.mapleader = " "
+
+vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
