@@ -13,7 +13,9 @@ return {
           command = "clang-format-18",
         },
       },
-      format_on_save = true, -- optional: automatically format on save
+      format_on_save = {
+        timeout_ms = 500,
+      }, -- optional: automatically format on save
     })
   end,
 }
