@@ -78,9 +78,10 @@ return {
     config = function()
       vim.diagnostic.config({
         virtual_text = true, -- ← this is the key line
+        virtual_lines = true,
         signs = true,
         underline = true,
-        update_in_insert = false,
+        update_in_insert = true,
         severity_sort = true,
       })
 
