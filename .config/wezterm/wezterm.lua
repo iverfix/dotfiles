@@ -1,9 +1,11 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
+--- Technical setup
+config.default_prog = { "/bin/zsh" }
 
 --- Font config
-config.font_size = 14
+config.font_size = 10
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.enable_wayland = false
 
