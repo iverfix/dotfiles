@@ -29,4 +29,4 @@ config.window_padding = {
 config.max_fps = 120
 config.prefer_egl = true
 
-return config 
+return config
