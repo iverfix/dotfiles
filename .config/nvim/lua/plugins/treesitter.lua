@@ -1,6 +1,7 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
     build = ':TSUpdate', -- keeps parsers up to date
     opts = {
       ensure_installed = {
