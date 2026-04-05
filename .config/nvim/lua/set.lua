@@ -1,24 +1,23 @@
-local set = vim.opt
-set.nu = true
-set.relativenumber = true
+vim.opt.nu = true
+vim.opt.relativenumber = true
 
-set.tabstop = 4
-set.softtabstop = 4
-set.shiftwidth = 4
-set.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
-set.smartindent = true
+vim.opt.smartindent = true
 
-set.swapfile = false
-set.backup = false
+vim.opt.swapfile = false
+vim.opt.backup = false
 
-set.hlsearch = false
-set.incsearch = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
-set.termguicolors = true
+vim.opt.termguicolors = true
 
-set.scrolloff = 8
+vim.opt.scrolloff = 8
 
-set.updatetime = 50
+vim.opt.updatetime = 50
 
 vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = 'none' })
