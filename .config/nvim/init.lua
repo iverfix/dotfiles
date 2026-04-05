@@ -8,6 +8,6 @@ require('plugins.colors')
 require('plugins.gitsigns')
 require('plugins.conform')
 require('plugins.lsp')
-
+require('plugins.lualines')
 
 vim.opt.clipboard:append('unnamedplus')
