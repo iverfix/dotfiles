@@ -11,3 +11,5 @@ require('plugins.lsp')
 require('plugins.lualines')
 
 vim.opt.clipboard:append('unnamedplus')
+
+require('vim._core.ui2').enable({})
