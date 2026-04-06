@@ -13,7 +13,14 @@ require('mason').setup({
 vim.diagnostic.config({
   virtual_text = false, -- Disabled in favor of virtual_lines
   virtual_lines = { current_line = true }, -- Native multi-line diagnostics
-  signs = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '✘',
+      [vim.diagnostic.severity.WARN]  = '▲',
+      [vim.diagnostic.severity.HINT]  = '⚑',
+      [vim.diagnostic.severity.INFO]  = '»',
+    },
+  },
   underline = true,
   update_in_insert = true,
   severity_sort = true,
